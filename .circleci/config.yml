@@ -57,15 +57,6 @@ jobs:
             - coverage.xml
       - attach_workspace:
           at: ~/project/tmp
-      - run:
-          name: diff cover
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "main" ];
-            then
-              pipenv run diff-cover --compare-branch $(git rev-parse @~) tmp/coverage.xml
-            else
-              pipenv run diff-cover tmp/coverage.xml
-            fi
 workflows:
   build_test:
     jobs:

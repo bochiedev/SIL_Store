@@ -27,6 +27,7 @@ repos:
       - id: forbid-new-submodules
       - id: mixed-line-ending
       - id: name-tests-test
+        args: ["--django"]
       - id: no-commit-to-branch
         args: [--branch, develop, --branch, main]
       - id: requirements-txt-fixer
@@ -72,3 +73,8 @@ repos:
           # making isort line length compatible with black
           - "--max-line-length=99"
           - "--max-complexity=18"
+
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v1.7.7
+    hooks:
+      - id: autoflake
