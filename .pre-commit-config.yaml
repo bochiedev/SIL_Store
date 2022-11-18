@@ -27,6 +27,7 @@ repos:
       - id: forbid-new-submodules
       - id: mixed-line-ending
       - id: name-tests-test
+        args: ["--django"]
       - id: no-commit-to-branch
         args: [--branch, develop, --branch, main]
       - id: requirements-txt-fixer
@@ -52,21 +53,8 @@ repos:
     hooks:
       - id: black
         args: # arguments to configure black
-          - --line-length=88
+          - --line-length=99
           - --include='\.pyi?$'
-
-          # these folders wont be formatted by black
-          - --exclude="""\.git |
-            \.__pycache__|
-            \.migrations|
-            \.mypy_cache|
-            \.tox|
-            \.venv|
-            _build|
-            buck-out|
-            build|
-            dist"""
-
         language_version: python3.10
 
   - repo: https://github.com/asottile/seed-isort-config
@@ -83,11 +71,10 @@ repos:
       - id: flake8
         args: # arguments to configure flake8
           # making isort line length compatible with black
-          - "--max-line-length=88"
+          - "--max-line-length=99"
           - "--max-complexity=18"
-          - "--select=B,C,E,F,W,T4,B9"
 
-          # these are errors that will be ignored by flake8
-          # check out their meaning here
-          # https://flake8.pycqa.org/en/latest/user/error-codes.html
-          - "--ignore=E203,E266,E501,W503,F403,F401,E402"
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v1.7.7
+    hooks:
+      - id: autoflake

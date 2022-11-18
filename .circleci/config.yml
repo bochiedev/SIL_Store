@@ -26,7 +26,7 @@ jobs:
           include-branch-in-cache-key: false
       - run:
           name: run flake8
-          command: pipenv run flake8 .
+          command: pipenv run flake8 --max-line-length 99 --exclude=.venv/ .
       - run:
           name: run black formatter on project
           command: pipenv run black -l 99 --check -S --extend-exclude="migrations|.venv" .
@@ -57,15 +57,6 @@ jobs:
             - coverage.xml
       - attach_workspace:
           at: ~/project/tmp
-      - run:
-          name: diff cover
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "main" ];
-            then
-              pipenv run diff-cover --compare-branch $(git rev-parse @~) tmp/coverage.xml
-            else
-              pipenv run diff-cover tmp/coverage.xml
-            fi
 workflows:
   build_test:
     jobs:

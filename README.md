@@ -2,6 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/bochiedev/SIL_Store/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/bochiedev/SIL_Store/tree/main)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+[![codecov](https://codecov.io/gh/bochiedev/SIL_Store/branch/main/graph/badge.svg?token=SGB800V3WP)](https://codecov.io/gh/bochiedev/SIL_Store)
 
 <!-- description -->
 
