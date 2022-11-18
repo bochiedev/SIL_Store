@@ -54,19 +54,6 @@ repos:
         args: # arguments to configure black
           - --line-length=99
           - --include='\.pyi?$'
-
-          # these folders wont be formatted by black
-          - --exclude="""\.git |
-            \.__pycache__|
-            \.migrations|
-            \.mypy_cache|
-            \.tox|
-            \.venv|
-            _build|
-            buck-out|
-            build|
-            dist"""
-
         language_version: python3.10
 
   - repo: https://github.com/asottile/seed-isort-config
