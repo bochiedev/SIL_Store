@@ -60,7 +60,7 @@ jobs:
       - run:
           name: diff cover
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ];
+            if [ "${CIRCLE_BRANCH}" == "main" ];
             then
               pipenv run diff-cover --compare-branch $(git rev-parse @~) tmp/coverage.xml
             else
