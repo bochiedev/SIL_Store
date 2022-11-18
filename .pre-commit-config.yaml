@@ -28,7 +28,7 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
       - id: no-commit-to-branch
-        args: [--branch, develop, --branch, master]
+        args: [--branch, develop, --branch, main]
       - id: requirements-txt-fixer
       - id: sort-simple-yaml
       - id: trailing-whitespace
