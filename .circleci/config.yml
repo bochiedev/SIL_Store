@@ -26,7 +26,7 @@ jobs:
           include-branch-in-cache-key: false
       - run:
           name: run flake8
-          command: pipenv run flake8 .
+          command: pipenv run flake8 --max-line-length 99 --exclude=.venv/ .
       - run:
           name: run black formatter on project
           command: pipenv run black -l 99 --check -S --extend-exclude="migrations|.venv" .
