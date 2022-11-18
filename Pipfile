@@ -4,17 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 djangorestframework = "*"
+pre-commit = "*"
 
 [dev-packages]
-black = "==22.6.0"
-codecov = "~=2.1"
-coverage = "~=5.1"
-diff-cover = "~=2.6"
-flake8 = "==5.0.4"
-isort = "~=5.10"
-pre-commit = "~=2.3"
 
 [requires]
 python_version = "3.10"
