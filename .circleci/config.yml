@@ -59,13 +59,7 @@ jobs:
           at: ~/project/tmp
       - run:
           name: diff cover
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "main" ];
-            then
-              pipenv run diff-cover --compare-branch $(git rev-parse @~) tmp/coverage.xml
-            else
-              pipenv run diff-cover tmp/coverage.xml
-            fi
+          command: pipenv run diff-cover tmp/coverage.xml
 workflows:
   build_test:
     jobs:
