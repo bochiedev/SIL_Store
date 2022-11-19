@@ -19,8 +19,8 @@ jobs:
             ls
             git checkout main
             git pull ssh main
-            /usr/local/bin/pipenv shell
-            /usr/local/bin/pipenv install
+            . /home/ubuntu/.local/share/virtualenvs/SIL_Store-yIrxGXRn/bin/activate
+            pipenv install
             python3 manage.py collectstatic
             python3 manage.py makemigrations
             sudo systemctl restart sil_store.s*
