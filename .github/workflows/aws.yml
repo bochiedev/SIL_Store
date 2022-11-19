@@ -12,15 +12,15 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           key: ${{ secrets.SIL_Store_PEM  }}
-          host : ${{ secrets.SIL_Store_HOSTNAME  }}
-          username : ${{ secrets.SIL_Store_USERNAME  }}
+          host: ${{ secrets.SIL_Store_HOSTNAME  }}
+          username: ${{ secrets.SIL_Store_USERNAME  }}
           script: |
             cd ~/SIL_Store
             ls
             git checkout main
             git pull ssh main
-            /home/ubuntu/.local/bin/pipenv shell 
-            /home/ubuntu/.local/bin/pipenv install 
-            /home/ubuntu/SIL_Store/.venv/bin/python3 manage.py makemigrations
+            pipenv shell
+            pipenv install
+            python3 manage.py makemigrations
             sudo systemctl restart sil_store.s*
             sudo systemctl restart nginx
