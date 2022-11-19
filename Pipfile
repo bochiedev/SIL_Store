@@ -8,6 +8,7 @@ django = "*"
 djangorestframework = "*"
 pytest-django = "*"
 coverage = "*"
+python-decouple = "*"
 
 [dev-packages]
 black = "==22.6.0"
