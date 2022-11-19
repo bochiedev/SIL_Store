@@ -19,8 +19,9 @@ jobs:
             ls
             git checkout main
             git pull ssh main
-            pipenv shell
-            pipenv install
+            /usr/local/bin/pipenv shell
+            /usr/local/bin/pipenv install
+            python3 manage.py collectstatic
             python3 manage.py makemigrations
             sudo systemctl restart sil_store.s*
             sudo systemctl restart nginx
